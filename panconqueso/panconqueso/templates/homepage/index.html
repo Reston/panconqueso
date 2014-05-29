@@ -29,12 +29,133 @@ Duranjo Web
 		<div class="wrapper banner1">
 		</div>
 	</section>
-	<section class="ofrecemos">		
+	<section class="sobrePanconqueso">
+		<h2 class="tituloNegro">Sobre Pan con Queso</h2>
+		<p>e eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullam.</p>
 	</section>
-	<section class="aboutus">		
+	<section class="ultimosProyectos">
+		<h2 class="tituloNaranja">Últimos Proyectos</h2>
+		<!-- Place somewhere in the <body> of your page -->
+		<div class="flexslider">
+		  <ul class="slides">
+		    <li data-thumb="slide1-thumb.jpg">
+		      <img src="slide1.jpg" />
+		    </li>
+		    <li data-thumb="slide2-thumb.jpg">
+		      <img src="slide2.jpg" />
+		    </li>
+		    <li data-thumb="slide3-thumb.jpg">
+		      <img src="slide3.jpg" />
+		    </li>
+		    <li data-thumb="slide4-thumb.jpg">
+		      <img src="slide4.jpg" />
+		    </li>
+		  </ul>
+		</div>
+		<div class="irCatalogo">Ir al Catalogo</div>
+		<div class="lineaCompleta"></div>
 	</section>
-	<section class="infoContacto">
-	</section>	
+	<section class="instragram">
+		<div class="tituloInstagram">Instagram</div>
+		<div class="ultimasPublicaciones">
+			<article class="publicacion"></article>
+			<article class="publicacion"></article>
+			<article class="publicacion"></article>
+		</div>
+		<h2 class="tituloNaranja">@panconqueso_ec</h2>
+		<div class="fotoInstagramLogo"></div>
+	</section>
+	<section class="entradasBlog">
+		<h2 class="tituloNegro">Entradas del blog</h2>
+		<div class="listaEntradas">
+			<div class="entrada">
+				<div class="entradaTop">
+					<div class="foto"></div>
+					<div class="titulo"><span class="subtitulo"></span></div>
+				</div>
+				<p></p>
+			</div>
+			<div class="entrada"></div>
+		</div>
+		<div class="irCatalogo">Ver todas las entradas</div>
+		<div class="lineaCompleta"></div>
+	</section>
+	<section class="nuestrosClientes">
+		<h2 class="tituloNaranja">Nuestros clientes</h2>
+		<div class="listaClientes">
+			<div class="cliente"><img src="" alt=""></div>
+		</div>
+	</section>
+	<section class="recomendacionClientes">
+		<h2 class="tituloNegro">Lo que dicen de nosotros</h2>
+		<div class="listaRecomendacion">
+			<div class="recomendacion">
+				<div class="foto"></div>
+				<div class="texto">
+					<div class="nombreTitulo">Nombre del cliente</div>
+					<p></p>
+				</div>
+			</div>
+		</div>
+	</section>
+		
+	<section class="fondoContacto">
+		<!-- COLOCAR BOTONES DE ME GUSTA Y SIGUENOS -->
+		<div class="wrapper">
+		<div class="tituloStyle">
+			<h2>Contacto</h2>
+			<div class="lineatitulo"></div>
+		</div>		
+		{% if success %}
+		<div class="mensajeenviado">
+			<div class="enviado">Su mensaje ha sido enviado correctamente, pronto nos pondremos en contacto con usted.</div>
+			<img class="sobre" src="{{ STATIC_URL }}img/sobre.png" alt="formulario de contacto">	
+		</div>
+		{% else %}
+		{% if form.errors %}
+        <p>
+            Por favor corregir los errores debajo.
+        </p>
+   		{% endif %}
+		<form action="#" method="POST">
+			{% csrf_token %}
+			<div class="campo">
+				{{ field.errors }}
+				<label for="nombre">Nombre:</label>
+				{{ form.nombre }}
+				{{ form.nombre.errors }}
+			</div>
+			<div class="campo">				
+				{{ field.errors }}
+				<label for="email">Correo Electrónico:</label>
+				{{ form.email }}
+				{{ form.email.errors }}
+			</div>
+			<div class="campo">
+				{{ field.errors }}
+				<label for="telefono">Teléfono:</label>
+				{{ form.telefono }}
+				{{ form.telefono.errors }}
+			</div>
+			<div class="textareaDescripcion">
+				{{ field.errors }}
+				<label for="texto">Breve descripción de su proyecto: </label>
+				{{ form.texto }}
+				{{ form.texto.errors }}
+			</div>
+			<div class="botonEnviar">
+				<input type="submit">
+			</div>
+		</form>
+		{% endif %}
+		<div class="tituloStyle">
+			<h2>Información de contacto</h2>
+			<div class="lineatitulo"></div>
+		</div>	
+		<section class="infoContacto">
+		</section>
+	</div>
+	</section>
 	<!-- Google+ SCRIPT --> 
 		<!-- Place this tag after the last badge tag. -->
 		<script  async type="text/javascript">

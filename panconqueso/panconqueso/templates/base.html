@@ -32,11 +32,46 @@
 	  ga('send', 'pageview');
 	</script> -->
 	<header id="home" class="cabecera">
-		<div class="wrapper">				
-			<nav class="barraNavegacion">
-				{% block navi %} {% endblock%}
-			</nav>
+		<div class="infoHeader">
+			<div class="wrapper">
+				<div class="email">info@planningscheduling.com</div>
+				<div class="telefono">Teléfono: +34 902118916</div>
+				<div class="redes">
+					<a href="http://www.youtube.com/channel/UCpF6BHSl3F8VlFCh_4o8gew/"><div class="youtube"></div></a>
+					<a href="https://twitter.com/**"><div class="twitterlogo"></div></a>
+					<a href="https://www.facebook.com/**"><div class="facebook"></div></a>
+					<a href=""><div class="googleplus"></div></a>
+					<a href=""><div class="linkedin"></div></a>
+					<a href=""><div class="slideshare"></div></a>
+				</div>
+			</div>
 		</div>
+		<div class="logo">
+			<img src="{% static 'img/logoplanningscheduling.png' %}" alt="Logo planning scheduling">
+			<h1>Estudio Creativo</h1>
+		</div>
+		<nav class="barraNavegacion">
+			<ul>
+				<li class="index"><a href="{% url 'homepageindex' %}">Inicio</a></li>
+				<li class="aboutus"><a href="">Sobre nosotros</a></li>
+				<li class="catalog"><a href="">Catalogo</a></li>
+				<li class="blog"><a href="">Blog</a></li>
+				<li class="clients"><a href="">Clientes</a></li>
+				<li class="contact"><a href="">Contacto</a></li>
+			</ul>
+			<select> 
+				<option value="" selected="selected">Menú</option> 
+				<option value="{% url 'homepageindex' %}">Inicio</option> 
+				<option value="">Sobre nosotros</option>
+				<option value="">Catalogo</option>
+				<option value="">Blog</option>
+				<option value="">Clientes</option>
+				<option value="">Contacto</option>
+
+			</select> 
+			<div class="whiteLine"></div>
+		</nav>		
+		<div class="clearfix"></div>
 	</header>
 	<section class="contenido">
 		{% block contenido %} {% endblock%}
