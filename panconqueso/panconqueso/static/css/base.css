@@ -1,1 +1,185 @@
 @charset 'utf-8';
+html, body{
+	margin: 0;
+	height: 100%;
+	background: white;
+	color: black;
+	font-family: helvetica, sans-serif, arial;
+}
+h1, h2{
+	color: #7C7C7C;
+}
+.wrapper{
+	width: 1000px;
+	height: 100%;
+	margin: 0 auto 0 auto;
+}
+header{
+	position: absolute;
+	z-index: 10;
+	width: 100%;
+}
+header > .wrapper{
+	background: black;
+	background: rgba(0, 0, 0, 0.66);
+	color: white;
+}
+nav select {
+  display: none;
+}
+/* Configuración slider */
+.flexslider{
+	background: #fff url(../../img/loader.gif) no-repeat center center !important;
+	overflow: hidden;
+	height: auto;
+	margin: 0 !important;
+	border: none !important;
+}
+.slides{
+	margin: 0;
+	padding: 0;
+}
+.flexslider .slides img{
+	width: 100%;
+	height: calc(100%); /* IE9+ and future browsers */
+	height: -moz-calc(100%); /* Firefox */
+	height: -webkit-calc(100%); /* Chrome, Safari */
+}
+.flexslider .slides li{
+	height: 100%;
+}
+.flex-control-nav{
+	bottom: 5px !important; 
+}
+.flex-direction-nav a{
+	z-index: 10; 
+	visibility: hidden;
+}
+.slides ul li{
+	text-decoration: none;
+}
+
+/*************************/
+/* Primer banner section */
+/*************************/
+.sliderPosition{
+	width: 100%;
+	color: transparent;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+.bannerPrincipal{
+	position: relative;
+	height: calc(100%); /* IE9+ and future browsers */
+	height: -moz-calc(100%); /* Firefox */
+	height: -webkit-calc(100%); /* Chrome, Safari */
+	min-height: 475px;
+}
+
+/* Configuración back to top button */
+
+.back-top {
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	z-index: 1;
+}
+
+.back-top a {
+	width: 108px;
+	display: block;
+	text-align: center;
+	font: 11px/100% Arial, Helvetica, sans-serif;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: black;
+
+	/* transition */
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+.back-top a:hover {
+	color: #000;
+}
+	/* arrow icon (span tag) */
+.back-top span {
+	width: 70px;
+	height: 70px;
+	display: block;
+	margin: 0 auto 7px auto;
+	font-size: 0;
+	background: rgb(75, 75, 75) url(../img/up-arrow.png) no-repeat center center;
+
+	/* rounded corners */
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	border-radius: 15px;
+
+	/* transition */
+	-webkit-transition: 1s;
+	-moz-transition: 1s;
+	transition: 1s;
+}
+.back-top a:hover span {
+	background-color: #777;
+}
+
+@media screen and (max-width: 1020px){
+	.wrapper{
+		width: 100%;
+	}
+	
+	nav ul { display: none; }
+	nav select { display: inline-block; }
+
+	.redesociales{
+		display: none;
+	}
+	.imagenLogo{
+		margin: 0 auto;
+		display: block;
+	}
+	.menuylogo{
+		text-align: center;
+	}
+	.barraNavegacion{
+		margin-top: 25px;
+	}
+	/* FOOTER */ 
+	.infoFooter{
+		height: auto;
+		text-align: center;
+		padding-top: 10px;
+	}
+	.infoFooter .wrapper > div {
+		width: 49%;
+	}
+	.footer-izq {
+		width: 100%;
+	}
+	.imagenLogoFooter{
+		margin: 0 auto;
+		display: block;
+	}
+	/* configuración back-to-top responsive */
+	.back-top a{
+		width: 60px;
+		text-shadow: 0 0 1px black;
+	}
+	.back-top span {
+		width: 40px;
+		height: 40px;
+		font-weight: bold;
+		font-size: 4em;
+		line-height: 30px;
+		background: none;
+		margin: 0 auto 0 auto;
+	}
+	.back-top a:hover span {
+		background:none;
+	}
+	/* END CONFIG back-to-top */
+}

@@ -4,6 +4,7 @@ from django.shortcuts import render_to_response
 from panconqueso.apps.homepage.forms import contactForm
 from django.template import RequestContext
 from django.core.mail import send_mail
+from instagram.client import InstagramAPI
 
 
 def index(request):
@@ -18,7 +19,20 @@ def index(request):
 			send_mail(asunto, content, cd['email'], ['info@duranjo.com'])
 	else:
 		form = contactForm()
-	ctx = {'form': form, 'success': success}
+
+	api = InstagramAPI(client_id='e78042ef1e834e75a28291aee734d615', client_secret='a299e7f23d0840f9b473417ea7c38c33')
+	recent_media, next = api.user_recent_media(user_id="621890719", count=4)
+	lista_media_url = []
+	#lista_media_texto = []
+	lista_media_likes = []
+	lista_media_link = []
+	for media in recent_media:
+		lista_media_link.append(media.link)
+		lista_media_url.append(media.images['standard_resolution'].url)
+		#lista_media_texto.append(media.caption.text)
+		lista_media_likes.append(str(media.like_count))
+	zip_media = zip(lista_media_link, lista_media_url, lista_media_likes)
+	ctx = {'form': form, 'success': success, 'zip_media': zip_media}
 	return render_to_response('homepage/index.html', ctx, context_instance=RequestContext(request))
 
 
@@ -36,4 +50,4 @@ def services(request):
 
 
 def contact(request):
-	return render_to_response('homepage/contacto.html', ctx, context_instance=RequestContext(request))
+	return render_to_response('homepage/contacto.html', context_instance=RequestContext(request))

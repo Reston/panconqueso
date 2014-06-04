@@ -5,100 +5,124 @@
 <meta name="description" content="">
 {% endblock%}
 {% block title %}
-Duranjo Web
+Pan con queso Estudio Creativo - Página Oficial
 {% endblock%}
 {% block css%}
-<link rel="stylesheet" href="{{ STATIC_URL }}css/index.css">
+<link rel="stylesheet" href="{% static 'css/homepage/index.css' %}">
 {% endblock %}
 {% block js %}
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/adquiridos/jquery.flexslider-min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/adquiridos/back-top.js' %}"></script>
 {% endblock %}
 {% block navi %}
 		<ul>
 			<li class="index"><a href="{% url 'homepageindex' %}">Inicio</a></li>
-			<li class="works"><a href="{% url 'homepageworks' %}">Trabajos</a></li>
-			<li class="services"><a href="{% url 'homepageservices' %}">Servicios</a></li>
+			<li class="works"><a href="">Catalogo</a></li>
+			<li class="services"><a href="">Blog</a></li>
+			<li class="contact"><a href="">Clientes</a></li>
 			<li class="contact"><a href="{% url 'homapagecontact' %}">Contacto</a></li>
 		</ul>				
 {% endblock %}
 {% block clear %}{% endblock%}
 {% block contenido %}
 	<section class="bannerPrincipal">
-		<h1>Titulo importante</h1>
-		<div class="wrapper banner1">
+		<div class="sliderPosition">
+			<div class="flexslider">
+				<ul class="slides">
+					<li><img src="{% static 'img/a.jpg' %}" alt=""></li>
+					<li><img src="{% static 'img/b.jpg' %}" alt=""></li>
+					<li><img src="{% static 'img/c.jpg' %}" alt=""></li>
+				</ul>
+			</div>
 		</div>
 	</section>
 	<section class="sobrePanconqueso">
-		<h2 class="tituloNegro">Sobre Pan con Queso</h2>
-		<p>e eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullam.</p>
+		<div class="wrapper">
+			<h2 class="tituloNegro">Sobre Pan con Queso</h2>
+			<p>e eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullam.</p>
+		</div>
 	</section>
 	<section class="ultimosProyectos">
-		<h2 class="tituloNaranja">Últimos Proyectos</h2>
-		<!-- Place somewhere in the <body> of your page -->
-		<div class="flexslider">
-		  <ul class="slides">
-		    <li data-thumb="slide1-thumb.jpg">
-		      <img src="slide1.jpg" />
-		    </li>
-		    <li data-thumb="slide2-thumb.jpg">
-		      <img src="slide2.jpg" />
-		    </li>
-		    <li data-thumb="slide3-thumb.jpg">
-		      <img src="slide3.jpg" />
-		    </li>
-		    <li data-thumb="slide4-thumb.jpg">
-		      <img src="slide4.jpg" />
-		    </li>
-		  </ul>
+		<div class="wrapper">
+			<h2 class="tituloNaranja">Últimos Proyectos</h2>
+			<!-- Place somewhere in the <body> of your page -->
+			<div class="aflexslider">
+			  <ul class="slides">
+			    <li data-thumb="slide1-thumb.jpg">
+			      <img src="slide1.jpg" />
+			    </li>
+			    <li data-thumb="slide2-thumb.jpg">
+			      <img src="slide2.jpg" />
+			    </li>
+			    <li data-thumb="slide3-thumb.jpg">
+			      <img src="slide3.jpg" />
+			    </li>
+			    <li data-thumb="slide4-thumb.jpg">
+			      <img src="slide4.jpg" />
+			    </li>
+			  </ul>
+			</div>
+			<div class="irCatalogo">Ir al Catalogo</div>
+			<div class="lineaCompleta"></div>
 		</div>
-		<div class="irCatalogo">Ir al Catalogo</div>
-		<div class="lineaCompleta"></div>
 	</section>
 	<section class="instragram">
-		<div class="tituloInstagram">Instagram</div>
-		<div class="ultimasPublicaciones">
-			<article class="publicacion"></article>
-			<article class="publicacion"></article>
-			<article class="publicacion"></article>
+		<div class="wrapper">
+			<div class="tituloInstagram">Instagram</div>
+			<div class="ultimasPublicaciones">
+				{% for media_link, media_url, media_likes, media_texto in zip_media %}
+				<article class="publicacion">
+					<a href="{{media_link}}">
+						<img src="{{media_url}}" alt="prueba">
+						<div class="likes">{{media_likes}}</div>
+					</a>
+				</article>
+				{% endfor %}
+			</div>
+			<h2 class="tituloNaranja"><a href="http://instagram.com/panconqueso_ec" rel="nofollow"></a>@panconqueso_ec</h2>
+			<div class="fotoInstagramLogo"></div>
 		</div>
-		<h2 class="tituloNaranja">@panconqueso_ec</h2>
-		<div class="fotoInstagramLogo"></div>
 	</section>
 	<section class="entradasBlog">
-		<h2 class="tituloNegro">Entradas del blog</h2>
-		<div class="listaEntradas">
-			<div class="entrada">
-				<div class="entradaTop">
-					<div class="foto"></div>
-					<div class="titulo"><span class="subtitulo"></span></div>
+		<div class="wrapper">
+			<h2 class="tituloNegro">Entradas del blog</h2>
+			<div class="listaEntradas">
+				<div class="entrada">
+					<div class="entradaTop">
+						<div class="foto"></div>
+						<div class="titulo"><span class="subtitulo"></span></div>
+					</div>
+					<p></p>
 				</div>
-				<p></p>
+				<div class="entrada"></div>
 			</div>
-			<div class="entrada"></div>
+			<div class="irCatalogo">Ver todas las entradas</div>
+			<div class="lineaCompleta"></div>
 		</div>
-		<div class="irCatalogo">Ver todas las entradas</div>
-		<div class="lineaCompleta"></div>
 	</section>
 	<section class="nuestrosClientes">
-		<h2 class="tituloNaranja">Nuestros clientes</h2>
-		<div class="listaClientes">
-			<div class="cliente"><img src="" alt=""></div>
+		<div class="wrapper">
+			<h2 class="tituloNaranja">Nuestros clientes</h2>
+			<div class="listaClientes">
+				<div class="cliente"><img src="" alt=""></div>
+			</div>
 		</div>
 	</section>
 	<section class="recomendacionClientes">
-		<h2 class="tituloNegro">Lo que dicen de nosotros</h2>
-		<div class="listaRecomendacion">
-			<div class="recomendacion">
-				<div class="foto"></div>
-				<div class="texto">
-					<div class="nombreTitulo">Nombre del cliente</div>
-					<p></p>
+		<div class="wrapper">
+			<h2 class="tituloNegro">Lo que dicen de nosotros</h2>
+			<div class="listaRecomendacion">
+				<div class="recomendacion">
+					<div class="foto"></div>
+					<div class="texto">
+						<div class="nombreTitulo">Nombre del cliente</div>
+						<p></p>
+					</div>
 				</div>
 			</div>
 		</div>
-	</section>
-		
+	</section>		
 	<section class="fondoContacto">
 		<!-- COLOCAR BOTONES DE ME GUSTA Y SIGUENOS -->
 		<div class="wrapper">
@@ -156,6 +180,16 @@ Duranjo Web
 		</section>
 	</div>
 	</section>
+	<!-- ====================================== -->
+<!-- Scripts de la página de inicio -->
+<!-- ====================================== -->
+	<!-- SLIDER INIT -->
+	<script>
+		$(document).ready(function() {
+		  $('.flexslider').flexslider({
+		  });
+		});
+	</script>	
 	<!-- Google+ SCRIPT --> 
 		<!-- Place this tag after the last badge tag. -->
 		<script  async type="text/javascript">
