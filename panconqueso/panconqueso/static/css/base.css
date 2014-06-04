@@ -6,8 +6,46 @@ html, body{
 	color: black;
 	font-family: helvetica, sans-serif, arial;
 }
-h1, h2{
-	color: #7C7C7C;
+h2{
+	color: #FFF;
+	position: relative;
+	margin: 0.2ex auto 2.2ex auto;
+	padding: 8px;
+	width: 35%;
+	text-align: center;
+}
+.tituloNaranja{
+	background: #FFA500;
+}
+.tituloNegro{
+	background: black;
+}
+.tituloNegro:before, .tituloNaranja:after, .tituloNaranja:before, .tituloNegro:after {
+	content: '';
+	position: absolute;
+	display: block;
+	bottom: 0;
+	border-style: solid;
+	border-width: 23px 2ex;
+	z-index: 4;
+}
+.tituloNaranja:before, .tituloNaranja:after{
+	border-color: #FFA500;
+}
+.tituloNegro:before, .tituloNegro:after{
+	border-color: black;
+}
+.tituloNaranja:before, .tituloNegro:before{
+	left: -1ex;
+	border-left-width: 1ex;
+	border-right-width: 1ex;
+	border-left-color: rgba(0, 0, 0, 0);
+}
+.tituloNaranja:after, .tituloNegro:after{
+	right: -1ex;
+	border-right-width: 1ex;
+	border-left-width: 1ex;
+	border-right-color: rgba(0, 0, 0, 0);
 }
 .wrapper{
 	width: 1000px;
