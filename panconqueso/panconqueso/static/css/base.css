@@ -1,21 +1,95 @@
 @charset 'utf-8';
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), url(http://themes.googleusercontent.com/static/fonts/raleway/v7/IczWvq5y_Cwwv_rBjOtT0w.woff) format('woff');
+}
 html, body{
 	margin: 0;
 	height: 100%;
 	background: white;
 	color: black;
-	font-family: helvetica, sans-serif, arial;
+	font-family: 'Raleway', helvetica, sans-serif, arial;
+}
+h1{
+	display: inline-block;
+	vertical-align: top;
+	line-height: 200px;
+	margin: 0;
+	font-size: 1.5em;
 }
 h2{
 	color: #FFF;
 	position: relative;
 	margin: 0.2ex auto 2.2ex auto;
-	padding: 8px;
+	padding: 8px 8px 9px 8px;
 	width: 35%;
 	text-align: center;
 }
+.logoymenu img{
+	display: inline-block;
+	width: 200px;
+	margin-left: 10px;
+}
+.infoHeader .email, .infoHeader .telefono, .infoHeader .redes{
+	display: inline-block;
+	width: 31%;
+	text-align: center;
+	padding: 6px;
+}
+.twitterlogo, .facebook,  .youtube, .instagram{
+	background: url(../img/redes.png) no-repeat;
+	display: inline-block;
+}
+.twitterlogo{
+	background-position: 10px 0;
+	height: 35px;
+	width: 35px;
+}
+.facebook{
+	background-position: -40px 0;
+	height: 35px;
+	width: 35px;
+}
+.instagram{
+	background-position: -85px 0;
+	height: 35px;
+	width: 35px;
+}
+nav{
+	display: inline-block;
+	color: #FFF;
+	vertical-align: bottom;
+	width: 55%;
+	padding: 1% 1% 5% 1%;
+}
+nav select {
+  display: none;
+}
+nav > ul{
+	padding: 0;
+	margin: 0;
+	margin-top: 30px;
+}
+nav li{
+	display: inline-block;
+	text-align: center;
+	font-size: 1em;
+}
+nav a{
+	text-decoration: none;
+	color: #FFF;
+	border-right: 2px solid #ED7129; /*naranja*/
+	padding-right: 10px;
+	font-size: 1.2em;
+}
+nav a:hover{
+	color: #ED7129;
+}
+/*SECCION CONTENIDO*/
 .tituloNaranja{
-	background: #FFA500;
+	background: #ED7129;
 }
 .tituloNegro{
 	background: black;
@@ -30,7 +104,7 @@ h2{
 	z-index: 4;
 }
 .tituloNaranja:before, .tituloNaranja:after{
-	border-color: #FFA500;
+	border-color: #ED7129;
 }
 .tituloNegro:before, .tituloNegro:after{
 	border-color: black;
@@ -64,6 +138,48 @@ header > .wrapper{
 }
 nav select {
   display: none;
+}
+/*CONTACTO */
+form{
+	width: 50%;
+	display: inline-block;
+}
+.campos{
+	display: inline-block;
+}
+.campo{
+	margin-bottom: 10px;
+}
+.campo label {
+	float: left;
+	width: 100%;
+	margin-bottom: 3px;
+}
+.campo input, textarea{
+	text-indent: 10px;
+	width: 100%;
+	background: #FFF;
+	color: #000;
+}
+.campo input{
+	height: 28px;
+}
+.campo textarea{
+	height: 172px;
+}
+
+.botonEnviar{
+	text-align: center;
+}
+.botonEnviar input{
+	margin: 5px auto;
+	border-radius: 300px;
+	width: 75px;
+	height: 75px;
+	background: #ED7129;
+	text-align: center;
+	color: #FFF;
+	border: 1px dotted #FFF;
 }
 /* Configuración slider */
 .flexslider{
