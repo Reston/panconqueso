@@ -21,7 +21,7 @@ def index(request):
 		form = contactForm()
 
 	api = InstagramAPI(client_id='e78042ef1e834e75a28291aee734d615', client_secret='a299e7f23d0840f9b473417ea7c38c33')
-	recent_media, next = api.user_recent_media(user_id="621890719", count=4)
+	recent_media, next = api.user_recent_media(user_id="621890719", count=6)
 	lista_media_url = []
 	#lista_media_texto = []
 	lista_media_likes = []

@@ -58,17 +58,21 @@ header > .wrapper{
 	background: url(../img/redes.png) no-repeat;
 	display: inline-block;
 }
-.twitterlogo{
+.redesContacto .twitterlogo, .redesContacto .facebook, .redesContacto .youtube, .redesContacto .instagram{
+	background: url(../img/redesContacto.png) no-repeat;
+	display: inline-block;
+}
+.twitterlogo, .redesContacto .twitterlogo{
 	background-position: 10px 0;
 	height: 35px;
 	width: 35px;
 }
-.facebook{
+.facebook, .redesContacto .facebook{
 	background-position: -40px 0;
 	height: 35px;
 	width: 35px;
 }
-.instagram{
+.instagram, .redesContacto .instagram{
 	background-position: -85px 0;
 	height: 35px;
 	width: 35px;
@@ -143,7 +147,78 @@ nav a:hover{
 	background: rgba(218, 218, 218, 0.59);
 	padding: 1em;
 }
+/* INSTAGRAM */
+.instagramFondo{
+	background: #424040;
+	padding: 50px 0;
+}
+.tituloInstagram{
+	color: #FFF;
+	text-align: center;
+	font-size: 3em;
+	font-style: italic;
+	font-weight: bold;
+}
+.instagramFondo .instagramLink{
+	text-decoration: none;
+	color: white;
+}
+.publicacion{
+	width: 30%;
+	background: #FFF;
+	border: 3px solid #E2E2E2;
+	margin: 5px;
+	padding: 5px;
+	display: inline-block;
+}
+.publicacion a{
+	text-decoration: none;
+	color: black;
+}
+.publicacion img{
+	width: 100%;
+}
+.publicacion .likes{
+	font-weight: bold;
+	color: #726E6E;
+}
+/* Clientes */
+.listaClientes{
+	background: #F3F3F3;
+	padding: 0 5px;
+}
+.cliente{
+	display: inline-block;
+	width: 22.5%;
+	background: #FFF;
+	padding: 5px;
+	margin: 10px 5px;
+	outline: 1px solid #CACACA;
+}
+.cliente img{
+	width: 100%;
+}
+/*Lo que dicen los clientes*/
+.recomendacionClientes{
+	background: #424040;
+	padding: 50px 0;
+}
+.recomendacion{
+	background: white;
+	display: inline-block;
+	width: 32%;
+	vertical-align: top;
+	text-align: justify;
+	padding: 0 5px;
+	border-radius: 5px;
+}
+.foto{
+	text-align: center;
+}
 /*CONTACTO */
+.fondoContacto{
+	padding: 50px 0;
+}
 form{
 	width: 50%;
 	display: inline-block;
@@ -188,6 +263,21 @@ form{
 	text-align: center;
 	color: #FFF;
 	border: 1px dotted #FFF;
+}
+.infoContacto{
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	width: 45%;
+	color: #ED7129;
+}
+.infoContacto span{
+	display: block;
+	color: black;
+}
+/*Footer*/
+footer{
+	background: #ED7129;
 }
 /* Configuración slider */
 .flexslider{

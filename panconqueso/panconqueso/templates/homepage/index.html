@@ -66,20 +66,20 @@ Pan con queso Estudio Creativo - Página Oficial
 			<div class="lineaCompleta"></div>
 		</div>
 	</section>
-	<section class="instragram">
+	<section class="instagramFondo">
 		<div class="wrapper">
 			<div class="tituloInstagram">Instagram</div>
 			<div class="ultimasPublicaciones">
 				{% for media_link, media_url, media_likes, media_texto in zip_media %}
 				<article class="publicacion">
 					<a href="{{media_link}}">
-						<img src="{{media_url}}" alt="prueba">
-						<div class="likes">{{media_likes}}</div>
+						<img src="{{media_url}}" target="_blank" alt="prueba">
+						<div class="likes">{{media_likes}} <span>Likes</span></div>
 					</a>
 				</article>
 				{% endfor %}
 			</div>
-			<h2 class="tituloNaranja"><a href="http://instagram.com/panconqueso_ec" rel="nofollow"></a>@panconqueso_ec</h2>
+			<h2 class="tituloNaranja"><a href="http://instagram.com/panconqueso_ec" class="instagramLink" rel="nofollow">@panconqueso_ec</a></h2>
 			<div class="fotoInstagramLogo"></div>
 		</div>
 	</section>
@@ -104,7 +104,11 @@ Pan con queso Estudio Creativo - Página Oficial
 		<div class="wrapper">
 			<h2 class="tituloNaranja">Nuestros clientes</h2>
 			<div class="listaClientes">
-				<div class="cliente"><img src="" alt=""></div>
+				<div class="cliente"><img src="{% static 'img/logo.png' %}" alt=""></div>
+				<div class="cliente"><img src="{% static 'img/logo.png' %}" alt=""></div>
+				<div class="cliente"><img src="{% static 'img/logo.png' %}" alt=""></div>
+				<div class="cliente"><img src="{% static 'img/logo.png' %}" alt=""></div>
+				<div class="cliente"><img src="{% static 'img/logo.png' %}" alt=""></div>
 			</div>
 		</div>
 	</section>
@@ -113,10 +117,24 @@ Pan con queso Estudio Creativo - Página Oficial
 			<h2 class="tituloNegro">Lo que dicen de nosotros</h2>
 			<div class="listaRecomendacion">
 				<div class="recomendacion">
-					<div class="foto"></div>
+					<div class="foto"><img src="{% static 'img/logo.png' %}" alt=""></div>
 					<div class="texto">
 						<div class="nombreTitulo">Nombre del cliente</div>
-						<p></p>
+						<p>felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae</p>
+					</div>
+				</div>
+				<div class="recomendacion">
+					<div class="foto"><img src="{% static 'img/logo.png' %}" alt=""></div>
+					<div class="texto">
+						<div class="nombreTitulo">Nombre del cliente</div>
+						<p>felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae</p>
+					</div>
+				</div>
+				<div class="recomendacion">
+					<div class="foto"><img src="{% static 'img/logo.png' %}" alt=""></div>
+					<div class="texto">
+						<div class="nombreTitulo">Nombre del cliente</div>
+						<p>felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae</p>
 					</div>
 				</div>
 			</div>
@@ -171,11 +189,22 @@ Pan con queso Estudio Creativo - Página Oficial
 			</div>
 		</form>
 		{% endif %}
-		<div class="tituloStyle">
-			<h2>Información de contacto</h2>
-			<div class="lineatitulo"></div>
-		</div>	
 		<section class="infoContacto">
+			<div class="redesContacto">
+				<a href="http://instagram.com/panconqueso_ec" rel="nofollow"><div class="instagram"></div></a>
+				<a href="https://twitter.com/panconqueso_ec" rel="nofollow"><div class="twitterlogo"></div></a>
+				<a href="https://www.facebook.com/pancon.quesoec" rel="nofollow"><div class="facebook"></div></a>												
+			</div>
+			<div class="telefono">
+				Telefono:
+				<span>04246512429</span>
+				<span>04246231092</span>
+			</div>
+			<div class="correo">
+				Correo:
+				<span>info@panconquesoec.com</span>
+			</div>
+			<div class="logo"></div>
 		</section>
 	</div>
 	</section>
