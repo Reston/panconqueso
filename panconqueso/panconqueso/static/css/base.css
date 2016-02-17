@@ -23,7 +23,7 @@ h1{
 h2{
 	color: #FFF;
 	position: relative;
-	margin: 0.2ex auto 2.2ex auto;
+	margin: 0 auto 1.5em auto;
 	padding: 8px 8px 9px 8px;
 	width: 35%;
 	text-align: center;
@@ -108,6 +108,10 @@ nav a:hover{
 	color: #ED7129;
 }
 /*SECCION CONTENIDO*/
+.nuestrosClientes, .entradasBlog, .ultimosProyectos, .sobrePanconqueso{
+	padding: 50px 0;
+	border-bottom: 1px solid #EBE7E9;
+}
 .tituloNaranja{
 	background: #ED7129;
 }
@@ -130,38 +134,65 @@ nav a:hover{
 	border-color: black;
 }
 .tituloNaranja:before, .tituloNegro:before{
-	left: -1ex;
-	border-left-width: 1ex;
-	border-right-width: 1ex;
+	left: -1em;
+	border-left-width: 1em;
+	border-right-width: 1em;
 	border-left-color: rgba(0, 0, 0, 0);
 }
 .tituloNaranja:after, .tituloNegro:after{
-	right: -1ex;
-	border-right-width: 1ex;
-	border-left-width: 1ex;
+	right: -1em;
+	border-right-width: 1em;
+	border-left-width: 1em;
 	border-right-color: rgba(0, 0, 0, 0);
 }
-
+.sobrePanconqueso, .entradasBlog, .fondoContacto{
+	background: url(../img/fondopatron.png);
+}
+.recomendacionClientes, .instagramFondo{
+	background: url(../img/tweed_@2X.png);
+}
+.irAbajo{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	width: 76px;
+	height: 53px;
+	background: url(../img/irabajo.png);
+	cursor: pointer;
+}
 /*SObre panconqueso*/
 .sobrePanconqueso p{
 	background: rgba(218, 218, 218, 0.59);
 	padding: 1em;
+	line-height: 1.8em;
+	border-radius: 5px;
 }
 /* INSTAGRAM */
 .instagramFondo{
-	background: #424040;
-	padding: 50px 0;
+	padding: 50px 0 0 0;
 }
 .tituloInstagram{
-	color: #FFF;
-	text-align: center;
-	font-size: 3em;
-	font-style: italic;
-	font-weight: bold;
+	background: url(../img/instagram2.png) no-repeat;
+	width: 300px;
+	height: 116px;
+	margin: 0 auto;
+}
+.ultimasPublicaciones{
+	margin-bottom: 30px;
 }
 .instagramFondo .instagramLink{
 	text-decoration: none;
 	color: white;
+}
+.fotoInstagramLogo{
+	margin: 0 auto;
+	background: url(../img/insta.png) no-repeat;
+	width: 450px;
+	height: 138px;
 }
 .publicacion{
 	width: 30%;
@@ -196,11 +227,11 @@ nav a:hover{
 	outline: 1px solid #CACACA;
 }
 .cliente img{
-	width: 100%;
+	width: 223px;
+	height: 223px;
 }
 /*Lo que dicen los clientes*/
 .recomendacionClientes{
-	background: #424040;
 	padding: 50px 0;
 }
 .recomendacion{
@@ -211,6 +242,12 @@ nav a:hover{
 	text-align: justify;
 	padding: 0 5px;
 	border-radius: 5px;
+}
+.texto{
+	padding: 5px;
+}
+.nombreTitulo{
+	font-weight: bold;
 }
 .foto{
 	text-align: center;
@@ -224,6 +261,7 @@ form{
 	display: inline-block;
 	outline: 1px solid #808080;
 	padding: 1em;
+	background: #FFF;
 }
 .campos{
 	display: inline-block;
@@ -270,20 +308,41 @@ form{
 	text-align: center;
 	width: 45%;
 	color: #ED7129;
+	line-height: 2em;
 }
 .infoContacto span{
 	display: block;
 	color: black;
 }
+.logoContacto{
+	background: url(../img/grispq.png) no-repeat;
+	width: 264px;
+	height: 186px;
+	margin: 0 auto;
+}
 /*Footer*/
 footer{
 	background: #ED7129;
+}
+.copyRight{
+	text-align: center;
+	color: white;
+}
+.copyRight{
+	text-align: center;
+	/*margin: 32px 0 0 0;*/
+	padding-top: 2px;
+}
+.copyRight > a > img{
+	width: 60px;
+	vertical-align: middle;
 }
 /* Configuración slider */
 .flexslider{
 	background: #fff url(../../img/loader.gif) no-repeat center center !important;
 	overflow: hidden;
 	height: 100%;
+	height: 100vh;
 	margin: 0 !important;
 	border: none !important;
 }

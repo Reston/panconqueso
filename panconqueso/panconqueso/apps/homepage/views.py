@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from django.shortcuts import render_to_response
 from panconqueso.apps.homepage.forms import contactForm
+from .models import LogoEmpresa
 from django.template import RequestContext
 from django.core.mail import send_mail
 from instagram.client import InstagramAPI
@@ -32,7 +33,8 @@ def index(request):
 		#lista_media_texto.append(media.caption.text)
 		lista_media_likes.append(str(media.like_count))
 	zip_media = zip(lista_media_link, lista_media_url, lista_media_likes)
-	ctx = {'form': form, 'success': success, 'zip_media': zip_media}
+	logos =  LogoEmpresa.objects.all()
+	ctx = {'form': form, 'success': success, 'zip_media': zip_media, 'logos': logos}
 	return render_to_response('homepage/index.html', ctx, context_instance=RequestContext(request))
 
 

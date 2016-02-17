@@ -12,6 +12,7 @@ Pan con queso Estudio Creativo - Página Oficial
 {% endblock %}
 {% block js %}
 <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="{% static 'js/adquiridos/stickymenu.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/adquiridos/jquery.flexslider-min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/adquiridos/back-top.js' %}"></script>
 {% endblock %}
@@ -19,7 +20,6 @@ Pan con queso Estudio Creativo - Página Oficial
 		<ul>
 			<li class="index"><a href="{% url 'homepageindex' %}">Inicio</a></li>
 			<li class="works"><a href="">Catalogo</a></li>
-			<li class="services"><a href="">Blog</a></li>
 			<li class="contact"><a href="">Clientes</a></li>
 			<li class="contact"><a href="{% url 'homapagecontact' %}">Contacto</a></li>
 		</ul>				
@@ -36,8 +36,9 @@ Pan con queso Estudio Creativo - Página Oficial
 				</ul>
 			</div>
 		</div>
+		<div id="bajarSobreNosotros" class="irAbajo"></div>
 	</section>
-	<section class="sobrePanconqueso">
+	<section id="sobreNosotros" class="sobrePanconqueso">
 		<div class="wrapper">
 			<h2 class="tituloNegro">Sobre Pan con Queso</h2>
 			<p>e eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullam.</p>
@@ -68,7 +69,7 @@ Pan con queso Estudio Creativo - Página Oficial
 	</section>
 	<section class="instagramFondo">
 		<div class="wrapper">
-			<div class="tituloInstagram">Instagram</div>
+			<div class="tituloInstagram"></div>
 			<div class="ultimasPublicaciones">
 				{% for media_link, media_url, media_likes, media_texto in zip_media %}
 				<article class="publicacion">
@@ -100,7 +101,7 @@ Pan con queso Estudio Creativo - Página Oficial
 			<div class="lineaCompleta"></div>
 		</div>
 	</section>
-	<section class="nuestrosClientes">
+	<section id="clients" class="nuestrosClientes">
 		<div class="wrapper">
 			<h2 class="tituloNaranja">Nuestros clientes</h2>
 			<div class="listaClientes">
@@ -108,7 +109,9 @@ Pan con queso Estudio Creativo - Página Oficial
 				<div class="cliente"><img src="{% static 'img/logo.png' %}" alt=""></div>
 				<div class="cliente"><img src="{% static 'img/logo.png' %}" alt=""></div>
 				<div class="cliente"><img src="{% static 'img/logo.png' %}" alt=""></div>
-				<div class="cliente"><img src="{% static 'img/logo.png' %}" alt=""></div>
+				{% for logo in logos %}
+					<div class="cliente"><img src="{{ MEDIA_URL }}{{logo.imagen}}" alt="{{logo.titulo}}"></div>
+				{% endfor %}
 			</div>
 		</div>
 	</section>
@@ -189,7 +192,7 @@ Pan con queso Estudio Creativo - Página Oficial
 			</div>
 		</form>
 		{% endif %}
-		<section class="infoContacto">
+		<section id="contact" class="infoContacto">
 			<div class="redesContacto">
 				<a href="http://instagram.com/panconqueso_ec" rel="nofollow"><div class="instagram"></div></a>
 				<a href="https://twitter.com/panconqueso_ec" rel="nofollow"><div class="twitterlogo"></div></a>
@@ -204,7 +207,7 @@ Pan con queso Estudio Creativo - Página Oficial
 				Correo:
 				<span>info@panconquesoec.com</span>
 			</div>
-			<div class="logo"></div>
+			<div class="logoContacto"></div>
 		</section>
 	</div>
 	</section>
@@ -216,30 +219,13 @@ Pan con queso Estudio Creativo - Página Oficial
 		$(document).ready(function() {
 		  $('.flexslider').flexslider({
 		  });
+		  $('#bajarSobreNosotros').click(function(){
+		  	$('html,body').animate({
+			scrollTop: $("#sobreNosotros").offset().top}, //se altura del menu, solo si el menu continua
+			'slow');
+		  });
 		});
 	</script>	
-	<!-- Google+ SCRIPT --> 
-		<!-- Place this tag after the last badge tag. -->
-		<script  async type="text/javascript">
-		 window.___gcfg = {lang: 'es-419'};
-		 (function() {
-		    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-		   po.src = 'https://apis.google.com/js/plusone.js';
-		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-		  })();
-		</script>
-	<!-- FACEBOOK SCRIPT -->
-			<div id="fb-root"></div>
-		<script async>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&status=0";
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
-	<!-- TWITTER SCRIPT -->
-	<script async>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	
 	<!-- BACK TOP BOX -->
 	<div id="back-top" class="back-top">
 		<a href="#home"><span>↑</span>Regresar arriba</a>

@@ -38,31 +38,34 @@
 				<div class="wrapper">
 					<div class="email">info@panconquesoec.com</div>
 					<div class="telefono">Teléfono: +58 999 9999999</div>
-					|
+					<div class="redes">
+						<a href="https://twitter.com/panconquesoec" rel="nofollow"><div class="twitterlogo"></div></a>
+						<a href="https://www.facebook.com/panconquesoec" rel="nofollow"><div class="facebook"></div></a>
+						<a href="http://instagram.com/panconquesoec" rel="nofollow"><div class="instagram"></div></a>
+						<!-- <a href="https://plus.google.com/*" rel="nofollow"><div class="googleplus"></div></a> -->
+					</div>
 				</div>
 			</div>
 			<div class="logoymenu">
 				<img src="{% static 'img/logo.png' %}" alt="Logo Pan con Queso Estudio Creativo">
 				<h1>Estudio Creativo</h1>
 				<nav class="barraNavegacion">
-				<ul>
-					<li class="index"><a href="{% url 'homepageindex' %}">Inicio</a></li>
-					<li class="aboutus"><a href="">Sobre nosotros</a></li>
-					<li class="catalog"><a href="">Catalogo</a></li>
-					<li class="blog"><a href="">Blog</a></li>
-					<li class="clients"><a href="">Clientes</a></li>
-					<li class="contact"><a href="">Contacto</a></li>
-				</ul>
-				<select> 
-					<option value="" selected="selected">Menú</option> 
-					<option value="{% url 'homepageindex' %}">Inicio</option> 
-					<option value="">Sobre nosotros</option>
-					<option value="">Catalogo</option>
-					<option value="">Blog</option>
-					<option value="">Clientes</option>
-					<option value="">Contacto</option>
-				</select> 
-			</nav>
+					<ul>
+						<li class="index"><a href="{% url 'homepageindex' %}">Inicio</a></li>
+						<li class="aboutus"><a href="#sobreNosotros">Sobre nosotros</a></li>
+						<li class="catalog"><a href="">Catalogo</a></li>
+						<li class="clients"><a href="#clients">Clientes</a></li>
+						<li class="contact"><a href="#contact">Contacto</a></li>
+					</ul>
+					<select> 
+						<option value="" selected="selected">Menú</option> 
+						<option value="{% url 'homepageindex' %}">Inicio</option> 
+						<option value="#sobreNosotros">Sobre nosotros</option>
+						<option value="">Catalogo</option>
+						<option value="#clients">Clientes</option>
+						<option value="#contact">Contacto</option>
+					</select> 
+				</nav>
 			</div>
 		</div>
 	</header>
@@ -84,7 +87,16 @@
 	<script>
 	$("nav select").change(function() {
 	    window.location = $(this).find("option:selected").val();
-	});    
+
+	});
+	// SLOW MENU SCROLL
+	var $root = $('html, body');
+	$('a').click(function() {
+	    $root.animate({
+	        scrollTop: $( $.attr(this, 'href') ).offset().top
+	    }, 500);
+	    return false;
+	});
 	</script>
 </body>
 </html>
